@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-pixel: var(--font-pixel);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #1d1f24;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: #ececec;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.font-pixel {
+  font-family: var(--font-pixel), monospace;
+}
+
+/* Beveled "block" panel */
+.mc-panel {
+  background: #2f3239;
+  border: 4px solid #000;
+  box-shadow:
+    inset 4px 4px 0 rgba(255, 255, 255, 0.08),
+    inset -4px -4px 0 rgba(0, 0, 0, 0.35),
+    6px 6px 0 rgba(0, 0, 0, 0.35);
+}
+
+.mc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.9rem;
+  border: 3px solid #000;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: transform 80ms ease, filter 120ms ease;
+  cursor: pointer;
+  user-select: none;
+}
+.mc-btn:hover { filter: brightness(1.1); }
+.mc-btn:active { transform: translateY(2px); }
+.mc-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.mc-btn-green {
+  background: #17b54f;
+  color: #fff;
+  box-shadow: inset 3px 3px 0 #5cf08f, inset -3px -3px 0 #0b6b2d;
+  text-shadow: 1px 1px 0 #064a1e;
+}
+.mc-btn-gold {
+  background: #f2c40c;
+  color: #1a1400;
+  box-shadow: inset 3px 3px 0 #fff08a, inset -3px -3px 0 #a07d00;
+}
+.mc-btn-ghost {
+  background: #4a4d55;
+  color: #fff;
+  box-shadow: inset 3px 3px 0 #6d7079, inset -3px -3px 0 #2a2c31;
+}
+.mc-btn-tg {
+  background: #229ed9;
+  color: #fff;
+  box-shadow: inset 3px 3px 0 #6cc8f2, inset -3px -3px 0 #136a93;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
